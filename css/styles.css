@@ -41,7 +41,6 @@ input:focus {
   padding: 15px 20px;
 }
 .showing {
-  display: block;
   margin-bottom: 20px;
   color: white;
   font-weight: 600;
