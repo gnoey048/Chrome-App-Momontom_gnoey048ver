@@ -13,6 +13,8 @@ body {
 .clock {
   font-size: 80px;
   color: white;
+  margin-top: 0px;
+  margin-bottom: 30px;
 }
 form {
   display: flex;
@@ -55,7 +57,7 @@ input:focus {
   border-radius: 10px;
 }
 .title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 23px;
 }
 .showing {
