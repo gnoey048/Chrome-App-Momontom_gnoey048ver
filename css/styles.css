@@ -64,6 +64,14 @@ input:focus {
   display: none;
 }
 /*background-image*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .backgroundImg {
   position: absolute;
   top: 0;
@@ -71,4 +79,5 @@ input:focus {
   width: 100%;
   height: 100%;
   z-index: -1;
+  animation: fadeIn 0.4s linear;
 }
