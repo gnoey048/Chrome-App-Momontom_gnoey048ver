@@ -18,9 +18,12 @@ function handleSubmit(event) {
   event.preventDefault();
   const currentValue = inputToDo.value;
   showingToDo(currentValue);
+  showingComplete(currentValue);
   inputToDo.value = "";
 }
 
+function deleteToDo() {}
+function goToComplete() {}
 function showingToDo(text) {
   const list = document.createElement("li");
   const content = document.createElement("span");
@@ -29,7 +32,9 @@ function showingToDo(text) {
   const newId = toDos.length + 1;
   content.innerText = text;
   delBtn.innerText = "❌";
+  delBtn.addEventListener("click", deleteToDo);
   completeBtn.innerText = "☑️";
+  completeBtn.addEventListener("click", goToComplete);
   list.appendChild(content);
   list.appendChild(delBtn);
   list.appendChild(completeBtn);
@@ -42,17 +47,37 @@ function showingToDo(text) {
   toDos.push(toDoObj);
   saveToDoInLocal();
 }
+
+function showingComplete(text) {
+  const list = document.createElement("li");
+  const content = document.createElement("span");
+  const delBtn = document.createElement("button");
+  const backBtn = document.createElement("button");
+  const newId = toDos.length + 1;
+  content.innerText = text;
+  delBtn.innerText = "❌";
+  delBtn.addEventListener("click", deleteToDo);
+  backBtn.innerText = "⏪";
+  backBtn.addEventListener("click", goToComplete);
+  list.appendChild(content);
+  list.appendChild(delBtn);
+  list.appendChild(backBtn);
+  list.id = newId;
+  completeList.appendChild(list);
+  const completeObj = {
+    text: text,
+    id: newId,
+  };
+  complete.push(completeObj);
+  saveToDoInLocal();
+}
+
 function parsedToDo() {
   const loadedToDo = localStorage.getItem(TODOS_LS);
   const loadedComplete = localStorage.getItem(COMPLETE_LS);
   const parsedToDo = JSON.parse(loadedToDo);
   const parsedComplete = JSON.parse(loadedComplete);
-  parsedToDo.forEach((toDo) => {
-    showingToDo(toDo.text);
-  });
-  parsedComplete.forEach((toDo) => {
-    //showingComplete(toDo.text);
-  });
 }
+
 parsedToDo();
 toDoForm.addEventListener("submit", handleSubmit);
