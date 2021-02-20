@@ -6,6 +6,10 @@ body {
   align-items: center;
   background-color: #f88379;
 }
+.date {
+  color: white;
+  font-size: 25px;
+}
 .clock {
   font-size: 80px;
   color: white;
