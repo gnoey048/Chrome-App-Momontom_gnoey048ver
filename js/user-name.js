@@ -4,13 +4,35 @@ const greetingText = document.querySelector(".js-hello");
 
 const USER_NAME = "user";
 
-function showingName() {}
+function saveLocalStorage(text) {
+  localStorage.setItem(USER_NAME, text);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const user = nameInput.value;
+  showingName(user);
+  saveLocalStorage(user);
+}
+
+function showingName(text) {
+  nameForm.classList.add("display-none");
+  greetingText.classList.remove("display-none");
+  greetingText.classList.add("showing");
+  greetingText.innerHTML = `Hello, ${text}! Have a nice day!`;
+}
+
+function askForName() {
+  nameForm.addEventListener("submit", handleSubmit);
+}
 
 function loadUserName() {
   const currentUser = localStorage.getItem(USER_NAME);
   if (currentUser === null) {
-    // 이름을 get해서 로컬에 저장시키기
+    askForName();
   } else {
-    showingName();
+    showingName(currentUser);
   }
 }
+
+loadUserName();
