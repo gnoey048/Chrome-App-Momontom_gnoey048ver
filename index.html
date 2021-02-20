@@ -13,15 +13,22 @@
       <input type="text" placeholder="What's your name?" />
     </form>
     <h3 class="js-hello display-none"></h3>
-    <form class="to-do-from">
+    <form class="to-do-form">
       <input type="text" placeholder="Make your To-Do-List!" />
     </form>
     <div class="list-box">
-      <div class="todo-list"></div>
-      <div class="complete-list"></div>
+      <div class="todo-list">
+        <span class="title">To Do</span>
+        <ul class="todo js-todo"></ul>
+      </div>
+      <div class="complete-list">
+        <span class="title">Complete</span>
+        <ul class="complete js-complete"></ul>
+      </div>
     </div>
 
     <script src="js/clock.js"></script>
     <script src="js/user-name.js"></script>
+    <script src="js/todolist.js"></script>
   </body>
 </html>
