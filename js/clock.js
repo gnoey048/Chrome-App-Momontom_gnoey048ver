@@ -12,7 +12,7 @@ function getTime() {
   const seconds = time.getSeconds();
   clock.innerText = `${hours < 10 ? `0${hours}` : hours}:${
     minutes < 10 ? `0${minutes}` : minutes
-  }:${seconds < 10 ? `0${seconds}` : seconds}`;
+  }`;
   dayInfo.innerText = `${year}.${month < 10 ? `0${month}` : month}.${
     date < 10 ? `0${date}` : date
   }, ${week[time.getDay()]} `;
