@@ -13,7 +13,7 @@ function getWeather(lat, lng) {
       const temperature = json.main.temp;
       const feelLike = json.main.feels_like;
       const place = json.name;
-      weather.innerHTML = `온도: ${temperature}°C, 체감온도: ${feelLike}, ${place}`;
+      weather.innerHTML = `온도: ${temperature}°C, 체감온도: ${feelLike}°C, ${place}`;
     });
 }
 

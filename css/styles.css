@@ -81,3 +81,20 @@ input:focus {
   z-index: -1;
   animation: fadeIn 0.4s linear;
 }
+
+/*weather*/
+.weather-box {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+}
