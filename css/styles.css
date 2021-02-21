@@ -65,6 +65,7 @@ input:focus {
 .title {
   font-weight: 700;
   font-size: 23px;
+  color: rgba(0, 0, 0, 0.788);
 }
 .showing {
   margin-bottom: 20px;
