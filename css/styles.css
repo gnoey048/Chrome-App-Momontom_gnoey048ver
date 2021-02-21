@@ -23,7 +23,7 @@ form {
   align-items: center;
 }
 input {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 10px 20px;
   width: 30%;
   min-width: 300px;
@@ -46,7 +46,7 @@ input:focus {
   border: 2px solid white;
   padding: 15px;
   margin: 5px;
-  min-width: 250px;
+  min-width: 300px;
   min-height: 300px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
