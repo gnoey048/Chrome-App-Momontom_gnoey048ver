@@ -1,4 +1,4 @@
-const API_KEY = "5577280eefb29c3ade8a6729db0a9be0";
+const API_KEY = "SECRET_API";
 const COORDS = "coords";
 const weather = document.querySelector(".weather-box");
 
