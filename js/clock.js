@@ -5,7 +5,7 @@ function getTime() {
   const time = new Date();
   const week = new Array("Sun", "Mon", "Tue", "Wen", "Thur", "Fri", "Sat");
   const date = time.getDate();
-  const month = time.getMonth();
+  const month = time.getMonth() + 1;
   const year = time.getFullYear();
   const hours = time.getHours();
   const minutes = time.getMinutes();
