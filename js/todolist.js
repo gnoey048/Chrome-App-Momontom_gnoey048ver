@@ -11,6 +11,8 @@ const complete = [];
 
 function saveToDoInLocal() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+}
+function saveCompleteInLocal() {
   localStorage.setItem(COMPLETE_LS, JSON.stringify(complete));
 }
 
@@ -22,8 +24,17 @@ function handleSubmit(event) {
   inputToDo.value = "";
 }
 
-function deleteToDo() {}
+function deleteToDo() {
+  const targetLi = this.parentNode;
+  toDoList.removeChild(targetLi);
+  const targetLiId = targetLi.id;
+  completeList.removeChild(targetLiId);
+  saveToDoInLocal();
+  saveCompleteInLocal();
+}
+
 function goToComplete() {}
+
 function showingToDo(text) {
   const list = document.createElement("li");
   const content = document.createElement("span");
@@ -53,7 +64,7 @@ function showingComplete(text) {
   const content = document.createElement("span");
   const delBtn = document.createElement("button");
   const backBtn = document.createElement("button");
-  const newId = toDos.length + 1;
+  const newId = complete.length + 1;
   content.innerText = text;
   delBtn.innerText = "❌";
   delBtn.addEventListener("click", deleteToDo);
@@ -63,21 +74,38 @@ function showingComplete(text) {
   list.appendChild(delBtn);
   list.appendChild(backBtn);
   list.id = newId;
+  list.classList.add("display-none");
   completeList.appendChild(list);
   const completeObj = {
     text: text,
     id: newId,
   };
   complete.push(completeObj);
-  saveToDoInLocal();
+  saveCompleteInLocal();
 }
 
 function parsedToDo() {
   const loadedToDo = localStorage.getItem(TODOS_LS);
+  if (loadedToDo !== null) {
+    const parsedToDo = JSON.parse(loadedToDo);
+    parsedToDo.forEach((el) => {
+      showingToDo(el.text);
+    });
+  }
+}
+function parsedComplete() {
   const loadedComplete = localStorage.getItem(COMPLETE_LS);
-  const parsedToDo = JSON.parse(loadedToDo);
-  const parsedComplete = JSON.parse(loadedComplete);
+  if (loadedComplete !== null) {
+    const parsedComplete = JSON.parse(loadedComplete);
+    parsedComplete.forEach((el) => {
+      showingComplete(el.text);
+    });
+  }
 }
 
-parsedToDo();
-toDoForm.addEventListener("submit", handleSubmit);
+function init() {
+  parsedToDo();
+  parsedComplete();
+  toDoForm.addEventListener("submit", handleSubmit);
+}
+init();
