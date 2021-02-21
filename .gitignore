@@ -47,5 +47,3 @@ $RECYCLE.BIN/
 
 
 js/config.js
-js/weather.js[API_KEY]
-js/weather.js[latitude, longitude]
