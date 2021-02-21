@@ -41,13 +41,8 @@ input:focus {
   border-bottom: 3px solid #cc5500;
   transition: border-bottom 0.3s ease-in-out;
 }
-.list-box {
-  margin-top: 15px;
-  padding: 5px;
-  display: flex;
-}
-.todo-list,
-.complete-list {
+
+.todo-list {
   border: 2px solid white;
   padding: 15px;
   margin: 5px;
@@ -55,6 +50,17 @@ input:focus {
   min-height: 300px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
+}
+.js-toDoList {
+  margin-bottom: 10px;
+}
+.js-toDoList button {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  height: 25px;
+  margin-left: 5px;
+  color: white;
 }
 .title {
   font-weight: 700;
