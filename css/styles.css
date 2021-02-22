@@ -5,7 +5,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f88379;
-  flex-wrap: wrap;
 }
 .date {
   color: white;
